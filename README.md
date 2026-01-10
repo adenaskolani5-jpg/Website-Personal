@@ -129,17 +129,25 @@ to{opacity:1;transform:translateX(0) scale(1);filter:blur(0)}
 const operators = {
   Indosat: {
     "Paket Internet Harian": [
-      {nama: "Indosat Yellow 1GB 2 Hari", harga: "Rp 9.000", ket: "Paket harian ringan, cocok untuk kebutuhan singkat"},
-      {nama: "Indosat Yellow 1GB 7 Hari", harga: "Rp 10.000", ket: "Lebih hemat untuk pemakaian mingguan"},
-      {nama: "Indosat Yellow 1GB 15 Hari", harga: "Rp 12.000", ket: "Cocok untuk pengguna hemat kuota"},
-      {nama: "Freedom Mini 3GB 1 Hari", harga: "Rp 10.000", ket: "Kuota besar untuk pemakaian intensif sehari"},
-      {nama: "Freedom Mini 5GB 2 Hari", harga: "Rp 12.000", ket: "Streaming & sosial media lebih puas"},
-      {nama: "Freedom Mini 3GB 3 Hari", harga: "Rp 15.000", ket: "Paket fleksibel jangka pendek"},
-      {nama: "Freedom Mini 2,5GB 5 Hari (Unreg)", harga: "Rp 16.000", ket: "Tidak perlu registrasi tambahan"},
+      {nama: "Indosat Yellow 1GB 1 Hari", harga: "Rp 8.000", ket: "Pastikan tidak ada paket internet yang masih aktif"},
+      {nama: "Indosat Yellow 1GB 2 Hari", harga: "Rp 9.000", ket: "Pastikan tidak ada paket internet yang masih aktif"},
+      {nama: "Indosat Yellow 1GB 7 Hari", harga: "Rp 10.000", ket: "Pastikan tidak ada paket internet yang masih aktif"},
+      {nama: "Indosat Yellow 1GB 15 Hari", harga: "Rp 12.000", ket: "Pastikan tidak ada paket internet yang masih aktif"},
+      {nama: "Freedom Mini 3GB 1 Hari", harga: "Rp 10.000", ket: "Kuota utama semua jaringan"},
+      {nama: "Freedom Mini 5GB 2 Hari", harga: "Rp 12.000", ket: "Kuota utama semua jaringan"},
+      {nama: "Freedom Mini 3GB 3 Hari", harga: "Rp 15.000", ket: "Kuota utama semua jaringan"},
+      {nama: "Freedom Mini 2,5GB 5 Hari (Unreg)", harga: "Rp 16.000", ket: "Berlaku Nasional, namun penggunaan mengikuti Regional Wilayah saat pengisian"},
+      {nama: "Freedom Mini 2,5GB 5 Hari ", harga: "Rp 17.000", ket: "-kuota Utama 2,5GB: -Zona Plus: 3GB -Zona Super Plus: 4GB"},
       {nama: "Freedom Mini 3,5GB 5 Hari", harga: "Rp 17.000", ket: "Kuota utama semua jaringan"},
-      {nama: "Freedom Mini 5GB 5 Hari (Unreg)", harga: "Rp 20.000", ket: "Langsung aktif tanpa syarat"},
-      {nama: "Freedom Mini 7GB 7 Hari", harga: "Rp 26.000", ket: "Pilihan favorit mingguan"},
-      {nama: "Freedom Mini 15GB 7 Hari", harga: "Rp 32.000", ket: "Kuota besar untuk aktivitas padat"}
+      {nama: "Freedom Mini 5GB 5 Hari (Unreg)", harga: "Rp 20.000", ket: "Berlaku Nasional, namun penggunaan mengikuti Regional Wilayah saat pengisian"},
+      {nama: "Freedom Mini 6GB 5 Hari", harga: "Rp 21.000", ket: "-kuota Utama 6GB: -Zona Plus: 7GB -Zona Super Plus: 8GB"},
+      {nama: "Freedom Mini 7GB 7 Hari", harga: "Rp 26.000", ket: "Kuota utama semua jaringan"},
+      {nama: "Freedom Mini 3GB 14 Hari", harga: "Rp 23.000", ket: "-kuota Utama 3GB: -Zona Plus: 4GB -Zona Super Plus: 5GB"},
+      {nama: "Freedom Mini 8GB 5 Hari", harga: "Rp 23.000", ket: "Kuota utama semua jaringan"},
+      {nama: "Freedom Mini 9GB 7 Hari", harga: "Rp 28.000", ket: "Kuota utama semua jaringan"},
+      {nama: "Freedom Mini 4GB 20 Hari", harga: "Rp 29.000", ket: "Kuota utama semua jaringan"},
+      {nama: "Freedom Mini 15GB 7 Hari (Unreg)", harga: "Rp 30.000", ket: "Berlaku Nasional, namun penggunaan mengikuti Regional Wilayah saat pengisian"},
+      {nama: "Freedom Mini 15GB 7 Hari", harga: "Rp 32.000", ket: "Kuota utama semua jaringan"}
     ],
     "Paket Internet Bulanan": [
       {nama: "100MB 24 Jam 30 Hari", harga: "Rp 2.000", ket: "Paket paling hemat bulanan"},
@@ -159,32 +167,39 @@ const operators = {
       {nama: "4GB Semua Jaringan 30 Hari", harga: "Rp 28.000", ket: "Streaming ringan"},
       {nama: "Freedom Internet 3GB 28 Hari", harga: "Rp 23.000", ket: "Freedom reguler bulanan"},
       {nama: "Freedom Internet 4GB 28 Hari", harga: "Rp 29.000", ket: "Kuota utama Freedom"},
-      {nama: "Freedom Internet 5.5GB 28 Hari", harga: "Rp 33.000", ket: "Lebih hemat kuota besar"},
-      {nama: "Freedom Internet 9GB 28 Hari", harga: "Rp 44.000", ket: "Cocok untuk streaming"},
-      {nama: "Freedom Internet 13GB 28 Hari", harga: "Rp 57.000", ket: "Aktivitas online intensif"},
-      {nama: "Freedom Internet 16GB 28 Hari", harga: "Rp 69.000", ket: "Kuota besar bulanan"},
-      {nama: "Freedom Internet 20GB 28 Hari", harga: "Rp 71.000", ket: "Penggunaan berat"},
-      {nama: "Freedom Internet 25GB 28 Hari", harga: "Rp 83.000", ket: "Rekomendasi pengguna aktif"},
-      {nama: "Freedom Internet 30GB 28 Hari", harga: "Rp 97.000", ket: "Streaming & gaming"},
-      {nama: "Freedom Internet 42GB 28 Hari", harga: "Rp 105.000", ket: "Kuota jumbo"},
-      {nama: "Freedom Internet Sensasi 50GB 28 Hari", harga: "Rp 106.000", ket: "Kuota besar harga hemat"},
-      {nama: "Freedom Internet Sensasi 70GB 28 Hari", harga: "Rp 127.000", ket: "Streaming tanpa khawatir"},
-      {nama: "Freedom Internet Sensasi 150GB 28 Hari", harga: "Rp 160.000", ket: "Kuota super besar"},
-      {nama: "Freedom Internet Sensasi 200GB 28 Hari", harga: "Rp 201.000", ket: "Untuk kebutuhan ekstrem"}
+      {nama: "Freedom Internet 5.5GB 28 Hari", harga: "Rp 33.000", ket: "-kuota Utama 6GB: -Zona Plus: 8GB -Zona Super Plus: 8GB"},
+      {nama: "Freedom Internet 7GB 28 Hari", harga: "Rp 40.000", ket: "-kuota Utama 7GB: -Zona Plus: 10GB -Zona Super Plus: 12GB"},
+      {nama: "Freedom Internet 9GB 28 Hari", harga: "Rp 47.000", ket: "-kuota Utama 9GB: -Zona Plus: 12GB -Zona Super Plus: 16GB"},
+      {nama: "Freedom Internet 13GB 28 Hari", harga: "Rp 57.000", ket: "-kuota Utama 13GB: -Zona Plus: 16GB -Zona Super Plus: 20GB"},
+      {nama: "Freedom Internet 16GB 28 Hari", harga: "Rp 60.000", ket: "-All Jaringan 24 jam -Jalur Mobo Indosat tanpa delay"},
+      {nama: "Freedom Internet 18GB 28 Hari", harga: "Rp 64.000", ket: "Penggunaan berat"},
+      {nama: "Freedom Internet 20GB 28 Hari", harga: "Rp 70.000", ket: "Penggunaan berat"},
+      {nama: "Freedom Internet 28GB 28 Hari", harga: "Rp 71.000", ket: "-All Jaringan 24 jam -Jalur Mobo Indosat tanpa delay"},
+      {nama: "Freedom Internet 25GB 28 Hari", harga: "Rp 83.000", ket: "Kuota utama semua jaringan"},
+      {nama: "Freedom Internet 42GB 28 Hari", harga: "Rp 92.000", ket: "-All Jaringan 24 jam -Jalur Mobo Indosat tanpa delay"},
+      {nama: "Freedom Internet 45GB 28 Hari", harga: "Rp 96.000", ket: "Kuota utama semua jaringan"},
+      {nama: "Freedom Internet 50GB 28 Hari", harga: "Rp 113.000", ket: "-All Jaringan 24 jam -Jalur Mobo Indosat tanpa delay"},
+      {nama: "Freedom Internet 5G 70GB 28 Hari", harga: "Rp 120.000", ket: "-20GB Kuota Jaringan 5G -50GB All Jaringan"},
+      {nama: "Freedom Internet 65GB 28 Hari", harga: "Rp 121.000", ket: "Kuota utama semua jaringan"},
+      {nama: "Freedom Internet 150GB 28 Hari", harga: "Rp 143.000", ket: "-All Jaringan 24 jam -Jalur Mobo Indosat tanpa delay"},
+      {nama: "Freedom Internet 200GB 28 Hari", harga: "Rp 190.000", ket: "Untuk kebutuhan ekstrem"},
+      {nama: "Freedom Internet  250GB 28 Hari", harga: "Rp 244.000", ket: "Kuota utama semua jaringan"},
+      {nama: "Freedom Internet 200GB 180 Hari", harga: "Rp 450.000", ket: "Note: Tidak Menambah Masa Aktif Kartu Hanya Menambah Masa Aktif Kuota"},
+      {nama: "Freedom Internet 1024GB 360 Hari", harga: "Rp 1.000.000", ket: "Note: Tidak Menambah Masa Aktif Kartu Hanya Menambah Masa Aktif Kuota"},
     ],
     "Paket Unlimited": [
-      {nama: "1GB + 2GB + Aplikasi Unlimited 6 Hari", harga: "Rp 20.000", ket: "Unlimited aplikasi pilihan"},
-      {nama: "1GB Semua + 4,5GB + Aplikasi Unlimited 28 Hari", harga: "Rp 36.000", ket: "Kuota + unlimited app"},
-      {nama: "2GB Semua + 7,5–8GB + Aplikasi Unli 28 Hari", harga: "Rp 59.000", ket: "Paket combo hemat"},
-      {nama: "3GB Semua + 15–17GB + Aplikasi Tanpa Batas 28 Hari", harga: "Rp 83.000", ket: "Untuk pengguna aktif"},
-      {nama: "7GB Semua + 28GB + Aplikasi Unlimited 28 Hari", harga: "Rp 108.000", ket: "Kuota besar + unlimited"},
+      {nama: "1GB + 2GB + Aplikasi Unlimited 6 Hari", harga: "Rp 20.000", ket: "UNREG paket terlebih dahulu"},
+      {nama: "1GB Semua + 2GB + Aplikasi Unlimited 6 Hari", harga: "Rp 21.000", ket: "-1GB All Jaringan -2GB Kuota Aplikasi -1GB+Unli App 7 Hari"},
+      {nama: "1GB Semua + 4,5GB + Aplikasi Unlimited 28 Hari", harga: "Rp 36.000", ket: "-1GB Utama -4,5GB Kuota Apps: Facebook, Twitter, WhatsApp, dll"},
+      {nama: "2GB Semua + 7,5–8GB + Aplikasi Unli 28 Hari", harga: "Rp 62.000", ket: "-2GB Kuota Utama All Jaringan -7,5-8GB Kuota Aplikasi"},
+      {nama: "3GB Semua + 15–17GB + Aplikasi Tanpa Batas 28 Hari", harga: "Rp 85.000", ket: "-3GB All Jaringan -15-17GB Kuota Aplikasi"},
+      {nama: "7GB Semua + 28GB + Aplikasi Unlimited 28 Hari", harga: "Rp 110.000", ket: "Kuota besar + unlimited"},
       {nama: "10GB Semua + 35GB + Aplikasi Tanpa Batas 28 Hari", harga: "Rp 120.000", ket: "Streaming & kerja"},
-      {nama: "15GB All + 25GB + Unlimited App, Telp & SMS 28 Hari", harga: "Rp 131.000", ket: "Paket lengkap all in one"},
-      {nama: "Unlimited 90GB + Unli App + Telp + SMS 28 Hari", harga: "Rp 162.000", ket: "Unlimited maksimal"}
+      {nama: "Unlimited 90GB + Unli App + Telp + SMS 28 Hari", harga: "Rp 156.000", ket: "-90 GB Kuota Utama All Jaringan -Unlimited Kuota Aplikasi"}
     ]
   },
   Axis: {
-    "Paket Internet Harian": [
+    "Paket Per Jam": [
       {nama: "Mini 1,5GB + Bonus Aigo 1 Hari", harga: "Rp 8.000", ket: "Paket harian hemat"},
       {nama: "Mini Axis 2,5GB + Bonus Aigo 1 Hari", harga: "Rp 10.000", ket: "Internet cepat sehari"},
       {nama: "Mini Axis 2GB + Bonus Aigo 3 Hari", harga: "Rp 12.000", ket: "Cocok untuk aktivitas ringan"},
@@ -194,7 +209,7 @@ const operators = {
       {nama: "Mini Axis 9GB + Bonus Aigo 3 Hari", harga: "Rp 17.000", ket: "Kuota besar harian"},
       {nama: "Aigo Kuota Mini 1,5GB + Bonus 1GB 1 Hari", harga: "Rp 8.000", ket: "Bonus AIGO aktif"}
     ],
-    "Paket Per Jam": [
+    "Paket Internet Harian": [
       {nama: "Mini 1,5GB + Bonus Aigo 1 Hari", harga: "Rp 8.000", ket: "Paket harian hemat"},
       {nama: "Mini Axis 2,5GB + Bonus Aigo 1 Hari", harga: "Rp 10.000", ket: "Internet cepat sehari"},
       {nama: "Mini Axis 2GB + Bonus Aigo 3 Hari", harga: "Rp 12.000", ket: "Cocok untuk aktivitas ringan"},
@@ -330,7 +345,6 @@ const operators = {
       {nama: "Mini Data 7GB Semua 7 Hari", harga: "Rp 30.000", ket: "Streaming aktif"},
       {nama: "Mini Data 17GB Semua 7 Hari", harga: "Rp 80.000", ket: "Kuota ekstrem mingguan"}
     ],
-
     "Data Mini Jabo - Banten": [
       {nama: "Paket Data 1,5GB 3 Hari", harga: "Rp 11.000", ket: "Area Jabo-Banten"},
       {nama: "Paket Data 2,5GB 5 Hari", harga: "Rp 14.000", ket: "Lokal hemat"},
