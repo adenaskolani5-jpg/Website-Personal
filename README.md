@@ -116,6 +116,12 @@ to{opacity:1;transform:translateX(0) scale(1);filter:blur(0)}
 <div id="topupList" class="space-y-3"></div>
 </section>
 
+<section id="gameDetail" class="hidden page p-6 max-w-6xl mx-auto">
+<button onclick="back()" class="back-btn mb-6">← Kembali</button>
+<h2 id="gameTitle" class="text-2xl font-bold mb-4"></h2>
+<div id="topupList" class="space-y-3"></div>
+</section>
+
 <footer class="mt-20 p-6 text-center text-sm bg-black/60 space-y-3">
 <h3 class="text-lg font-semibold">Silahkan Kunjungi Gerai PasirPogorCell Di Alamat Berikut</h3>
 <p class="text-gray-300">📍 Pasir Pogor, RT.2/RW.1, Ciparasi,<br>Kec. Sobang, Kabupaten Lebak, Banten 42280</p>
