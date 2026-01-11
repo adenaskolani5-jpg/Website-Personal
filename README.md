@@ -8,15 +8,127 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
+.pop-glow {
+  box-shadow: 0 0 6px #22c55e, 0 0 12px #22c55e;
+  animation: popGlow 2s infinite alternate;
+}
+
+@keyframes popGlow {
+  0% {
+    box-shadow: 0 0 6px #22c55e, 0 0 12px #22c55e;
+  }
+  50% {
+    box-shadow: 0 0 12px #22c55e, 0 0 24px #22c55e;
+  }
+  100% {
+    box-shadow: 0 0 6px #22c55e, 0 0 12px #22c55e;
+  }
+}
+
+/* Tombol angka & operator biasa */
+.calc-btn {
+  background-color: #10b981; /* hijau light-saber */
+  color: white;
+  font-weight: bold;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+}
+.calc-btn:hover {
+  background-color: #34d399;
+  transform: scale(1.05);
+}
+
+/* Tombol operasi + - / * */
+.calc-op {
+  background-color: #059669; /* hijau gelap */
+  color: white;
+  font-weight: bold;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+.calc-op:hover {
+  background-color: #10b981;
+  transform: scale(1.05);
+}
+
+/* Tombol khusus C, =, X/⌫ tetap putih */
+.calc-special {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 2px solid #d1d5db; /* abu tipis */
+}
+.calc-special:hover {
+  background-color: #f3f4f6;
+  transform: scale(1.05);
+}
+
+.modal-box{
+  background:#020b05;
+  border:1px solid #22c55e;
+  border-radius:1rem;
+  box-shadow:0 0 25px rgba(34,197,94,.6),0 0 60px rgba(34,197,94,.4);
+  animation: pop .3s ease-out;
+}
+
+@keyframes pop{
+  from{transform:scale(.9);opacity:0}
+  to{transform:scale(1);opacity:1}
+}
+
+.input-green{
+  background:#000;
+  border:1px solid #22c55e;
+  color:#22c55e;
+  border-radius:.5rem;
+  padding:.5rem;
+  width:100%;
+  outline:none;
+  box-shadow:0 0 10px rgba(34,197,94,.5);
+}
+
+.input-green:focus{
+  box-shadow:0 0 18px rgba(34,197,94,.9);
+}
+
+.pop-btn{
+  padding:.4rem .9rem;
+  border-radius:.6rem;
+  border:1px solid #22c55e;
+  color:#22c55e;
+  background:#000;
+  font-size:.8rem;
+  font-weight:600;
+  cursor:pointer;
+  transition:.25s;
+  box-shadow:0 0 6px rgba(34,197,94,.4);
+}
+
+.pop-btn:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 12px rgba(34,197,94,.9);
+}
+
+.pop-btn.active{
+  background:#22c55e;
+  color:black;
+  transform:scale(1.1);
+  box-shadow:0 0 18px #22c55e, 0 0 40px #22c55e;
+}
+
 :root{
   --bg:#050505;
   --card:#0b0b0b;
   --text:#e5e7eb;
   --muted:#9ca3af;
-  --accent:#22c55e;   /* hijau neon */
+  --accent:#22c55e;
   --blue:#3b82f6;
   --yellow:#facc15;
 }
+
 /* ===== LIGHT MODE ===== */
 .light{
   --bg:#f5f7fb;
@@ -27,34 +139,23 @@
   --blue:#2563eb;
   --yellow:#f59e0b;
 }
-
 .light body{
   background:linear-gradient(135deg,#eef2ff,#f8fafc);
 }
-
-/* card versi terang */
 .light .card{
   background:white;
   color:#0f172a;
   border:1px solid rgba(34,197,94,.4);
-  box-shadow:
-    0 6px 20px rgba(0,0,0,.08),
-    0 0 20px rgba(34,197,94,.15);
+  box-shadow:0 6px 20px rgba(0,0,0,.08),0 0 20px rgba(34,197,94,.15);
 }
-
-/* glow versi terang */
 .light .card::before{
   filter:blur(20px);
   opacity:.35;
 }
-
-/* harga versi terang */
 .light .price{
   color:#16a34a;
   text-shadow:none;
 }
-
-/* header */
 .light header{
   background:white;
   border-color:#e5e7eb;
@@ -62,14 +163,10 @@
 .light header p{
   color:#64748b;
 }
-
-/* footer */
 .light footer{
   background:#f8fafc;
   color:#334155;
 }
-
-/* marquee versi terang */
 .light .marquee{
   background:#e5e7eb;
   border-color:#22c55e;
@@ -87,8 +184,8 @@ body{
 
 .page{animation:slide .4s ease}
 @keyframes slide{
-from{opacity:0;transform:translateX(30px) scale(.97);filter:blur(5px)}
-to{opacity:1;transform:translateX(0) scale(1);filter:blur(0)}
+  from{opacity:0;transform:translateX(30px) scale(.97);filter:blur(5px)}
+  to{opacity:1;transform:translateX(0) scale(1);filter:blur(0)}
 }
 
 /* ===== GLOW SYSTEM ===== */
@@ -105,9 +202,7 @@ to{opacity:1;transform:translateX(0) scale(1);filter:blur(0)}
   cursor:pointer;
   transition:.35s;
   border:1px solid rgba(34,197,94,.35);
-  box-shadow:
-    0 0 12px rgba(34,197,94,.25),
-    0 0 40px rgba(34,197,94,.15);
+  box-shadow:0 0 12px rgba(34,197,94,.25),0 0 40px rgba(34,197,94,.15);
 }
 .card::before{
   content:"";
@@ -121,17 +216,13 @@ to{opacity:1;transform:translateX(0) scale(1);filter:blur(0)}
   animation:glow 3s infinite alternate;
 }
 @keyframes glow{from{opacity:.3}to{opacity:.7}}
-
 .card:hover{
   transform:scale(1.05);
   box-shadow:0 0 20px rgba(34,197,94,.8),0 0 60px rgba(59,130,246,.7);
 }
-
 .menu-active{
   border-color:var(--accent)!important;
-  box-shadow:
-    0 0 30px var(--accent),
-    0 0 80px rgba(59,130,246,.9)!important;
+  box-shadow:0 0 30px var(--accent),0 0 80px rgba(59,130,246,.9)!important;
 }
 
 /* buttons */
@@ -146,15 +237,11 @@ to{opacity:1;transform:translateX(0) scale(1);filter:blur(0)}
   transition:.3s;
 }
 .back-btn:hover{transform:scale(1.05)}
-
 .price{
   color:var(--accent);
   font-weight:700;
-  text-shadow:
-    0 0 6px rgba(34,197,94,.7),
-    0 0 14px rgba(34,197,94,.4);
+  text-shadow:0 0 6px rgba(34,197,94,.7),0 0 14px rgba(34,197,94,.4);
 }
-
 .ket-btn{
   background:var(--yellow);
   color:#000;
@@ -181,13 +268,11 @@ to{opacity:1;transform:translateX(0) scale(1);filter:blur(0)}
   border-top:1px solid #22c55e;
   border-bottom:1px solid #22c55e;
 }
-
 .marquee-track{
   display:flex;
   width:max-content;
   animation:scroll 25s linear infinite;
 }
-
 .marquee span{
   padding:12px 60px;
   white-space:nowrap;
@@ -196,79 +281,442 @@ to{opacity:1;transform:translateX(0) scale(1);filter:blur(0)}
   text-shadow:0 0 10px rgba(34,197,94,.8);
   font-size:.95rem;
 }
-
-/* loop tanpa jeda */
-@keyframes scroll{
-  from{transform:translateX(0)}
-  to{transform:translateX(-50%)}
+.pop-glow {
+  box-shadow: 0 0 6px #22c55e, 0 0 12px #22c55e;
+  animation: popGlow 2s infinite alternate;
 }
 
+@keyframes popGlow {
+  0% {
+    box-shadow: 0 0 6px #22c55e, 0 0 12px #22c55e;
+  }
+  50% {
+    box-shadow: 0 0 12px #22c55e, 0 0 24px #22c55e;
+  }
+  100% {
+    box-shadow: 0 0 6px #22c55e, 0 0 12px #22c55e;
+  }
+}
+
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 </style>
 </head>
 
 <body class="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white">
+
+<!-- MARQUEE -->
 <div class="marquee">
   <div class="marquee-track">
-    <span> [ Harga sewaktu waktu bisa berubah ]</span>
-    <span> [ Silahkan kunjungi langsung Gerai PasirPogorCell ]</span>
-    <span> [ CS 0838-4484-3020 ]</span>
-
-    <!-- DUPLIKAT agar loop sempurna -->
-    <span> [ Harga sewaktu waktu bisa berubah ]</span>
-    <span> [ Silahkan kunjungi langsung Gerai PasirPogorCell ]</span>
-    <span> [ CS 0838-4484-3020 ]</span>
+    <span>[ Harga sewaktu waktu bisa berubah ]</span>
+    <span>[ Silahkan kunjungi langsung Gerai PasirPogorCell ]</span>
+    <span>[ CS 0838-4484-3020 ]</span>
+    <!-- Duplikat untuk loop -->
+    <span>[ Harga sewaktu waktu bisa berubah ]</span>
+    <span>[ Silahkan kunjungi langsung Gerai PasirPogorCell ]</span>
+    <span>[ CS 0838-4484-3020 ]</span>
   </div>
 </div>
 
 <header class="p-6 text-center border-b border-gray-700">
-<h1 class="text-4xl font-bold">PasirPogorCell</h1>
-<p class="text-gray-300">Paket Internet & Top Up Game</p>
+  <h1 class="text-4xl font-bold">PasirPogorCell</h1>
+  <p class="text-gray-300">Paket Internet & Top Up Game</p>
 </header>
+
+<!-- Tombol Kalkulator & Populer -->
+<div class="flex justify-center gap-4 my-4">
+<!-- Pencarian -->
+<div class="flex flex-col items-center">
+  <button onclick="openHarga()"
+    class="w-24 border border-green-400 text-green-400 text-xs py-2 rounded-md hover:bg-green-400 hover:text-black transition pop-glow">
+    Cari
+  </button>
+</div>
+
+<!-- Kalkulator -->
+<div class="flex flex-col items-center">
+  <button onclick="openCalculator()"
+    class="w-24 border border-green-400 text-green-400 text-xs py-2 rounded-md hover:bg-green-400 hover:text-black transition pop-glow">
+    Kalkulator
+  </button>
+</div>
+
+<!-- Populer -->
+<div class="flex flex-col items-center">
+  <button onclick="openPopular()"
+    class="w-24 border border-green-400 text-green-400 text-xs py-2 rounded-md hover:bg-green-400 hover:text-black transition pop-glow">
+    Populer
+  </button>
+</div>
+
+</div>
+<div id="hargaModal"
+ class="fixed inset-0 bg-black/70 flex items-center justify-center opacity-0 pointer-events-none z-50 transition-opacity duration-300">
+
+ <div class="modal-box p-6 w-80 relative">
+   <h2 class="text-xl font-bold mb-3">Cari Paket & Top Up Game</h2>
+
+<input id="searchHarga"
+ class="input-green mb-3"
+ placeholder="Cari paket atau game..."
+    class="w-full p-2 rounded bg-gray-800 mb-3 text-sm">
+
+   <div id="hasilHarga" class="space-y-2 max-h-60 overflow-y-auto text-sm"></div>
+
+   <button onclick="closeHarga()"
+    class="absolute top-3 right-3 text-gray-400 hover:text-white text-lg font-bold">×</button>
+ </div>
+</div>
+
+<!-- Modal Daftar Populer -->
+<div id="popularModal" 
+     class="fixed inset-0 bg-black/70 flex items-center justify-center opacity-0 pointer-events-none z-50 transition-opacity duration-300">
+  <div class="relative bg-gray-900 text-white rounded-xl p-6 w-80 max-h-[80vh] overflow-auto transform scale-95 transition-transform duration-300">
+    <h2 class="text-xl font-bold mb-4">Paket & Game Populer</h2>
+    
+    <!-- Filter -->
+<div class="flex justify-center gap-3 mb-4">
+  <button onclick="selectPopular(this,'paket')" class="pop-btn">Paket</button>
+  <button onclick="selectPopular(this,'game')" class="pop-btn">Game</button>
+  <button onclick="selectPopular(this,'all')" class="pop-btn active">Semua</button>
+</div>
+
+    <ul id="popularList" class="list-disc pl-5 space-y-2">
+      <!-- Data akan dimasukkan lewat JS -->
+    </ul>
+    <button onclick="closePopular()" class="absolute top-3 right-3 text-gray-400 hover:text-white text-lg font-bold">×</button>
+  </div>
+</div>
+
+<script>
+function selectPopular(btn,type){
+  document.querySelectorAll(".pop-btn").forEach(b=>{
+    b.classList.remove("active");
+  });
+
+  btn.classList.add("active");
+
+  const list = document.getElementById("popularList");
+  list.style.opacity="0";
+  list.style.transform="translateY(10px)";
+
+  setTimeout(()=>{
+    showPopular(type);
+    list.style.opacity="1";
+    list.style.transform="translateY(0)";
+  },200);
+}
+
+const popularItems = {
+  paket: [
+    "Paket 10GB Reguler 30 Hari",
+    "Xtra On 2GB All Jaringan 30 Hari",
+    "Paket 3GB Reguler 24 Jam",
+    "Paket 6GB Reguler 30 Hari"
+  ],
+  game: [
+    "Top Up Free Fire 100 Diamond",
+    "Top Up Mobile Legends 50 Diamond",
+    "Top Up PUBG Mobile 300 UC"
+  ]
+};
+
+function openPopular() {
+  const modal = document.getElementById('popularModal');
+  modal.classList.remove('pointer-events-none', 'opacity-0');
+  modal.querySelector('div').classList.remove('scale-95');
+
+  selectPopular(document.querySelector(".pop-btn.active"),"all");
+}
+
+function closePopular() {
+  const modal = document.getElementById('popularModal');
+  modal.classList.add('opacity-0', 'pointer-events-none');
+  modal.querySelector('div').classList.add('scale-95');
+}
+
+function showPopular(type) {
+  const list = document.getElementById('popularList');
+  list.innerHTML = '';
+  let items = [];
+  if(type === 'paket') items = popularItems.paket;
+  else if(type === 'game') items = popularItems.game;
+  else items = [...popularItems.paket, ...popularItems.game];
+
+  items.forEach(item => {
+    const li = document.createElement('li');
+    li.textContent = item;
+    list.appendChild(li);
+  });
+}
+function openHarga(){
+  const m = document.getElementById("hargaModal");
+  m.classList.remove("opacity-0","pointer-events-none");
+  m.querySelector("div").classList.remove("scale-95");
+  buildHargaData();
+}
+
+function closeHarga(){
+  const m = document.getElementById("hargaModal");
+  m.classList.add("opacity-0","pointer-events-none");
+  m.querySelector("div").classList.add("scale-95");
+}
+
+let hargaData=[];
+
+function buildHargaData(){
+  hargaData=[];
+
+  // Ambil dari paket internet
+  Object.keys(operators).forEach(op=>{
+    Object.keys(operators[op]).forEach(cat=>{
+      operators[op][cat].forEach(p=>{
+        hargaData.push({
+          nama:p.nama,
+          harga:p.harga,
+          ket:p.ket
+        });
+      });
+    });
+  });
+
+  // Ambil dari game
+  Object.keys(games).forEach(game=>{
+    games[game].forEach(item=>{
+      const split=item.split(" Rp ");
+      hargaData.push({
+        nama: game+" - "+split[0],
+        harga:"Rp "+split[1],
+        ket:"Top Up Game"
+      });
+    });
+  });
+}
+
+document.getElementById("searchHarga").addEventListener("input",function(){
+  const q=this.value.toLowerCase();
+  const res=hargaData.filter(x=>x.nama.toLowerCase().includes(q));
+  const box=document.getElementById("hasilHarga");
+  box.innerHTML="";
+
+  if(res.length===0){
+    box.innerHTML="<p class='text-gray-400'>Tidak ditemukan</p>";
+    return;
+  }
+
+  res.slice(0,20).forEach(x=>{
+    box.innerHTML+=`
+    <div class="border border-green-500 rounded p-2">
+      <p class="text-green-400 font-semibold">${x.nama}</p>
+      <p>${x.harga}</p>
+      <p class="text-xs text-gray-400">${x.ket}</p>
+    </div>`;
+  });
+});
+
+</script>
+<!-- Modal Daftar Populer -->
+<div id="popularModal" 
+     class="fixed inset-0 bg-black/70 flex items-center justify-center opacity-0 pointer-events-none z-50 transition-opacity duration-300">
+  <div class="relative modal-box p-6 w-80 max-h-[80vh] overflow-auto transform scale-95 transition-transform duration-300">
+    <h2 class="text-xl font-bold mb-4 text-green-400">Paket & Game Populer</h2>
+    
+    <!-- Filter -->
+    <div class="flex justify-center gap-3 mb-4">
+      <button onclick="selectPopular(this,'paket')" class="pop-btn">Paket</button>
+      <button onclick="selectPopular(this,'game')" class="pop-btn">Game</button>
+      <button onclick="selectPopular(this,'all')" class="pop-btn active">Semua</button>
+    </div>
+
+    <!-- List Populer -->
+    <ul id="popularList" class="space-y-2 max-h-64 overflow-y-auto">
+      <!-- Item akan dimasukkan lewat JS -->
+    </ul>
+
+    <button onclick="closePopular()" class="absolute top-3 right-3 text-gray-400 hover:text-white text-lg font-bold">×</button>
+  </div>
+</div>
+
+<style>
+/* Style list Populer */
+#popularList li {
+  background: #000;
+  border: 1px solid #22c55e;
+  border-radius: 0.75rem;
+  padding: 0.6rem 0.9rem;
+  color: #22c55e;
+  font-weight: 600;
+  box-shadow: 0 0 10px rgba(34,197,94,0.4), 0 0 25px rgba(34,197,94,0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+#popularList li:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #22c55e, 0 0 40px #22c55e;
+}
+
+/* Filter tombol */
+.pop-btn.active {
+  background:#22c55e;
+  color:black;
+  transform:scale(1.1);
+  box-shadow:0 0 18px #22c55e, 0 0 40px #22c55e;
+}
+.pop-btn {
+  padding:.4rem .9rem;
+  border-radius:.6rem;
+  border:1px solid #22c55e;
+  color:#22c55e;
+  background:#000;
+  font-size:.8rem;
+  font-weight:600;
+  cursor:pointer;
+  transition:.25s;
+  box-shadow:0 0 6px rgba(34,197,94,.4);
+}
+.pop-btn:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 12px rgba(34,197,94,.9);
+}
+</style>
+
+<!-- Kalkulator Modal -->
+<div id="calculatorModal"
+     class="fixed inset-0 bg-black/70 flex items-center justify-center opacity-0 pointer-events-none z-50 transition-opacity duration-300">
+<div class="modal-box p-4 w-80 relative">
+    <h2 class="text-xl font-bold mb-4">Kalkulator</h2>
+    <input id="calcDisplay"
+ class="input-green mb-3 text-right text-xl font-bold">
+<div class="grid grid-cols-4 gap-2">
+  <!-- Baris 1 -->
+  <button onclick="appendCalc('7')" class="calc-btn text-black">7</button>
+  <button onclick="appendCalc('8')" class="calc-btn text-black">8</button>
+  <button onclick="appendCalc('9')" class="calc-btn text-black">9</button>
+  <button onclick="appendCalc('/')" class="calc-op">/</button>
+
+  <!-- Baris 2 -->
+  <button onclick="appendCalc('4')" class="calc-btn text-black">4</button>
+  <button onclick="appendCalc('5')" class="calc-btn text-black">5</button>
+  <button onclick="appendCalc('6')" class="calc-btn text-black">6</button>
+  <button onclick="appendCalc('*')" class="calc-op">x</button>
+
+  <!-- Baris 3 -->
+  <button onclick="appendCalc('1')" class="calc-btn text-black">1</button>
+  <button onclick="appendCalc('2')" class="calc-btn text-black">2</button>
+  <button onclick="appendCalc('3')" class="calc-btn text-black">3</button>
+  <button onclick="appendCalc('-')" class="calc-op">-</button>
+
+  <!-- Baris 4 -->
+  <button onclick="appendCalc('0')" class="calc-btn text-black col-span-2">0</button>
+  <button onclick="appendCalc('.')" class="calc-btn text-black">.</button>
+  <button onclick="appendCalc('+')" class="calc-op">+</button>
+
+  <!-- Tombol khusus -->
+  <button onclick="clearCalc()" class="calc-special bg-white text-black">C</button>
+  <button onclick="backspace()" class="calc-special bg-white text-black">X</button>
+  <button onclick="calculate()" class="calc-special bg-white text-black">=</button>
+</div>
+
+    <button onclick="closeCalculator()" class="absolute top-3 right-3 text-gray-400 hover:text-white text-lg font-bold">×</button>
+  </div>
+</div>
+
+<style>
+@keyframes greenGlow {
+  0% {
+    box-shadow: 0 0 5px #22c55e, 0 0 10px #22c55e;
+  }
+  50% {
+    box-shadow: 0 0 15px #22c55e, 0 0 30px #22c55e;
+  }
+  100% {
+    box-shadow: 0 0 5px #22c55e, 0 0 10px #22c55e;
+  }
+}
+
+.calc-btn:hover { background: #1f2937; }
+</style>
+
+<script>
+function openCalculator() {
+  const modal = document.getElementById('calculatorModal');
+  modal.classList.remove('opacity-0', 'pointer-events-none');
+  modal.querySelector('div').classList.remove('scale-95');
+}
+
+function closeCalculator() {
+  const modal = document.getElementById('calculatorModal');
+  modal.classList.add('opacity-0', 'pointer-events-none');
+  modal.querySelector('div').classList.add('scale-95');
+}
+
+function appendCalc(value) {
+  document.getElementById('calcDisplay').value += value;
+}
+
+function clearCalc() {
+  document.getElementById('calcDisplay').value = '';
+}
+
+function backspace() {
+  let display = document.getElementById('calcDisplay');
+  display.value = display.value.slice(0, -1);
+}
+
+function calculate() {
+  let display = document.getElementById('calcDisplay');
+  try {
+    display.value = eval(display.value);
+  } catch (e) {
+    display.value = 'Error';
+  }
+}
+</script>
 
 <!-- HOME -->
 <section id="home" class="page p-6 max-w-4xl mx-auto grid md:grid-cols-2 gap-6 mt-10">
-<button onclick="openInternet(this)" class="card">📶 Paket Internet</button>
-<button onclick="openGame(this)" class="card">🎮 Top Up Game</button>
+  <button onclick="openInternet(this)" class="card">📶 Paket Internet</button>
+  <button onclick="openGame(this)" class="card">🎮 Top Up Game</button>
 </section>
 
 <!-- INTERNET -->
 <section id="internet" class="hidden page p-6 max-w-6xl mx-auto">
-<button onclick="back()" class="back-btn mb-6">← Kembali</button>
-<h2 class="text-2xl font-bold mb-4">Pilih Operator</h2>
-<div id="operatorList" class="grid md:grid-cols-3 gap-4"></div>
+  <button onclick="back()" class="back-btn mb-6">← Kembali</button>
+  <h2 class="text-2xl font-bold mb-4">Pilih Operator</h2>
+  <div id="operatorList" class="grid md:grid-cols-3 gap-4"></div>
 </section>
 
 <section id="paketTypes" class="hidden page p-6 max-w-6xl mx-auto">
-<button onclick="back()" class="back-btn mb-6">← Kembali</button>
-<h2 id="paketTitle" class="text-2xl font-bold mb-4"></h2>
-<div id="paketTypeList" class="grid md:grid-cols-3 gap-4"></div>
+  <button onclick="back()" class="back-btn mb-6">← Kembali</button>
+  <h2 id="paketTitle" class="text-2xl font-bold mb-4"></h2>
+  <div id="paketTypeList" class="grid md:grid-cols-3 gap-4"></div>
 </section>
 
 <section id="operatorDetail" class="hidden page p-6 max-w-6xl mx-auto">
-<button onclick="back()" class="back-btn mb-6">← Kembali</button>
-<h2 id="operatorTitle" class="text-2xl font-bold mb-4"></h2>
-<div id="paketList" class="space-y-3"></div>
+  <button onclick="back()" class="back-btn mb-6">← Kembali</button>
+  <h2 id="operatorTitle" class="text-2xl font-bold mb-4"></h2>
+  <div id="paketList" class="space-y-3"></div>
 </section>
 
 <!-- GAME -->
 <section id="game" class="hidden page p-6 max-w-6xl mx-auto">
-<button onclick="back()" class="back-btn mb-6">← Kembali</button>
-<h2 class="text-2xl font-bold mb-4">Pilih Game</h2>
-<div id="gameList" class="grid md:grid-cols-3 gap-4"></div>
+  <button onclick="back()" class="back-btn mb-6">← Kembali</button>
+  <h2 class="text-2xl font-bold mb-4">Pilih Game</h2>
+  <div id="gameList" class="grid md:grid-cols-3 gap-4"></div>
 </section>
 
 <section id="gameDetail" class="hidden page p-6 max-w-6xl mx-auto">
-<button onclick="back()" class="back-btn mb-6">← Kembali</button>
-<h2 id="gameTitle" class="text-2xl font-bold mb-4"></h2>
-<div id="topupList" class="space-y-3"></div>
+  <button onclick="back()" class="back-btn mb-6">← Kembali</button>
+  <h2 id="gameTitle" class="text-2xl font-bold mb-4"></h2>
+  <div id="topupList" class="space-y-3"></div>
 </section>
 
+<!-- FOOTER -->
 <footer class="mt-20 p-6 text-center text-sm bg-black/60 space-y-3">
-<h3 class="text-lg font-semibold">Silahkan Kunjungi Gerai PasirPogorCell Di Alamat Berikut</h3>
-<p class="text-gray-300">📍 Pasir Pogor, RT.2/RW.1, Ciparasi,<br>Kec. Sobang, Kabupaten Lebak, Banten 42280</p>
-<a href="https://wa.me/6283844843020" class="text-green-400 inline-block">📞 (+62) 838-4484-3020</a>
-<hr class="border-gray-600 my-3">
-<p class="text-gray-400 text-xs">© 2026 PasirPogorCell<br>Developed by <span class="font-semibold text-white">Aden Askolani Fahri</span></p>
+  <h3 class="text-lg font-semibold">Silahkan Kunjungi Gerai PasirPogorCell Di Alamat Berikut</h3>
+  <p class="text-gray-300">📍 Pasir Pogor, RT.2/RW.1, Ciparasi,<br>Kec. Sobang, Kabupaten Lebak, Banten 42280</p>
+  <a href="https://wa.me/6283844843020" class="text-green-400 inline-block">📞 (+62) 838-4484-3020</a>
+  <hr class="border-gray-600 my-3">
+  <p class="text-gray-400 text-xs">© 2026 PasirPogorCell<br>Developed by <span class="font-semibold text-white">Aden Askolani Fahri</span></p>
 </footer>
 
 <script>
@@ -736,8 +1184,8 @@ function openPaket(op,cat){
  paketList.innerHTML="";
  operators[op][cat].forEach((p,i)=>{
   paketList.innerHTML+=`
-  <div class="card">${p.nama} <span class="price">${p.harga}</span>
-  <button class="ket-btn" onclick="toggleKet('${op}${cat}${i}')">?</button></div>
+  <div class="card">${p.nama} <span class="price">${p.Cari}</span>
+  <button class="ket-btn" onclick="toggleKet('${op}${cat}${i}')">?</button>
   <div id="${op}${cat}${i}" class="ket-box">${p.ket}</div>`;
  });
 }
